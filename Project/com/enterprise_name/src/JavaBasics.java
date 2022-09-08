@@ -1,10 +1,11 @@
+package Project.com.enterprise_name.src;
+
 import java.util.ArrayList;
 
-public class basics {
+public class JavaBasics {
     public static void main(String[] args) {
+        // declare variable
         int age = 18;
-        double pi = 3.14;
-        long longInt = 4515483;
 
         // declare, not assign
         boolean isRainy;
@@ -12,9 +13,8 @@ public class basics {
         // assign
         isRainy = true;
 
-        // char, single quotes
-        char letter = 'a';
-
+        // declare multiple values
+        int myAge = 18, temperature = 34;
 
         // Non primitive data types
         // String: double quotes
@@ -28,11 +28,22 @@ public class basics {
         System.out.println("My name is " + fullName + " and I'm " + age + " years old.");
         System.out.println("My dog barfs like so: " + barf);
 
+        // Assigning variables values to variables
+        int yourAge = age;
+        System.out.println("Just assigned variable: " + yourAge);
+        
+        // reassign variable
+        age = 25;
+        System.out.println("After changing original variable: " + yourAge);
+
         // from libraries
         ArrayList<String> myArray = new ArrayList<String>();
         myArray.add("user1");
         myArray.add("user2");
 
+        char letter = 'a';
+
+        System.out.println("Testing if/else branching");
         if(letter == 'a') {
             for (int i = 0; i <= myArray.lastIndexOf("user2"); i++) {
                 System.out.println(myArray.get(i));
