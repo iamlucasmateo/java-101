@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public class JavaBasics {
     public static void main(String[] args) {
+        // sout Tab (shortcut)
+        System.out.println("Hello, World");
+
         // declare variable
         int age = 18;
 
