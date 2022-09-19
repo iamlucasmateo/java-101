@@ -68,6 +68,11 @@ public class JavaBasics {
         } catch(Exception e) {
             System.out.println(e);
         }
+
+        // constants
+        final float PI = 3.14F;
+        // this causes a compilation error
+        // PI = 1;
     }
 
     // methods

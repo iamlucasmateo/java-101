@@ -37,6 +37,16 @@ public class JavaArrays {
             System.out.println(exc);
         }
 
+        // multidimensional arrays
+        int[][] matrix = new int[3][3];
+        matrix[0][0] = 1;
+        matrix[1][1] = 2;
+        matrix[2][2] = 3;
+        System.out.println(Arrays.deepToString(matrix));
+
+        int [][] initializedMatrix = { {1, 0, 0}, {0, 2, 0}, {0, 0, 3} };
+        System.out.println(Arrays.deepToString(initializedMatrix));
+
 
     }
 }
