@@ -73,6 +73,9 @@ public class JavaBasics {
         final float PI = 3.14F;
         // this causes a compilation error
         // PI = 1;
+
+        int negative = -1;
+        System.out.println(negative);
     }
 
     // methods
