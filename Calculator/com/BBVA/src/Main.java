@@ -13,7 +13,7 @@ public class Main {
             double loan = scanner.nextDouble();
             System.out.println("totalInstallments?");
             int totalInstallments = (int)scanner.nextFloat();
-            System.out.println("interest rate?");
+            System.out.println("interest rate? (periodic - effective)");
             double interestRate = scanner.nextDouble();
             double installment = Calculator.getInstallmentValue(loan, interestRate, totalInstallments);
             System.out.println("Your installment will be of: " + installment);

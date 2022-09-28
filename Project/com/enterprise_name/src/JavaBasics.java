@@ -26,7 +26,10 @@ public class JavaBasics {
 
         // classes from other files
         Animal dog = new Animal();
+        // this raises a warning because getBarf is static
         String barf = dog.getBarf();
+        // this is ok
+        String barfOk = Animal.getBarf();
 
         System.out.println("My name is " + fullName + " and I'm " + age + " years old.");
         System.out.println("My dog barfs like so: " + barf);
