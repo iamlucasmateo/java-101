@@ -3,10 +3,16 @@ package Project.com.enterprise_name.src;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.TreeSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
 
 
 public class JavaArrays {
     public static void main(String[] args) {
+        System.out.println("\n**** SIMPLE (FIXED SIZE) ARRAYS ****\n\n");
         // declare array (fixed size + type)
         // items get initialized to 0 for int
         // this arrays cannot be resized
@@ -22,9 +28,13 @@ public class JavaArrays {
         // this prints as expected
         System.out.println(Arrays.toString(numbers));
 
+        String[] strArr = new String[3];
+        // this is null
+        System.out.println(strArr[0]);
+
         // Arrays methods are "overloaded": implemented for many different types 
 
-        // newer syntax
+        // newer syntax: declare values explicitly
         int[] newNumbers = { 2, 3, 5, 1, 4 };
         int length = newNumbers.length;
         System.out.println(length);
@@ -50,8 +60,11 @@ public class JavaArrays {
         int [][] initializedMatrix = { {1, 0, 0}, {0, 2, 0}, {0, 0, 3} };
         System.out.println(Arrays.deepToString(initializedMatrix));
 
-
-        // ArrayList
+        /*
+         * **** ARRAY LIST ****
+         * This are dynamic arrays
+         */
+        System.out.println("\n\n**** ARRAY LISTS ****\n\n");
         ArrayList<Integer> myArrList = new ArrayList<Integer>();
         // Integer is the reference type form, wrapper for int; you need to use that for ArrayList
         myArrList.add(1);
@@ -66,7 +79,7 @@ public class JavaArrays {
             System.out.println(exc);
         }
 
-        // remove byu index
+        // remove by index
         myArrList.remove(2);
         System.out.println(myArrList);
         myArrList.add(4);
@@ -85,8 +98,12 @@ public class JavaArrays {
         toBeSorted.add(2);
         toBeSorted.add(7);
         toBeSorted.add(1);
+        // slicing
+        System.out.println("\nSlicing\n");
 
+        System.out.println(toBeSorted.subList(1, 5));
         toBeSorted.sort(Comparator.naturalOrder());
+        System.out.println("\nSorted\n");
         System.out.println(toBeSorted);
 
         int arrLength = toBeSorted.size();
@@ -99,5 +116,45 @@ public class JavaArrays {
             toBeSorted.set(index, number * 2);
         });
         System.out.println(toBeSorted);
+
+        /*
+         * LinkedList
+         * 
+         */
+        LinkedList<Integer> myLL = new LinkedList<Integer>();
+
+        /*
+         * SETS
+         * 
+        */
+        System.out.println("\n\n**** SETS ****\n\n");
+        Set<Integer> mySet = new HashSet<Integer>(); 
+        
+        // This doesn't work, new Set is not an implementation
+        // Set<Integer> mySet = new Set<Integer>(); 
+
+        mySet.add(7);
+        mySet.add(2);
+        mySet.add(3);
+        mySet.add(3);
+        // O(1)
+        boolean contains3 = mySet.contains(3);
+        System.out.println(contains3);
+        mySet.forEach(e -> {
+            String stringedValue = Integer.toString(e);
+            System.out.println("Unordered number " + stringedValue);
+        });
+
+        mySet.clear();
+        boolean isEmpty = mySet.isEmpty();
+        int setSize = mySet.size();
+        mySet.remove(5);
+
+        // Other type of sets
+
+        // ordered in tree structure
+        Set<Integer> myTreeSet= new TreeSet<Integer>();
+        // linked
+        Set<Integer> myLinkedSet = new LinkedHashSet<Integer>();
     }
 }
