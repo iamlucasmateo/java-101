@@ -1,8 +1,9 @@
 package Project.com.enterprise_name.src;
 
 public class OOPBook {
-    public String title;
-    public OOPUser author;
+    // 'protected' allows them to be accesed from sibling classes and classes inheriting this one.
+    protected String title;
+    protected OOPUser author;
 
     OOPBook(String title, OOPUser author) {
         this.title = title;
